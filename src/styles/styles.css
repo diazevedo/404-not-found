@@ -29,3 +29,31 @@ html {
   height: 100%;
   width: 100%;
 }
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  padding: var(--space-xs) var(--space-xs) var(--space-md);
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    padding: var(--space-md) var(--space-xs) var(--space-md);
+  }
+}
+
+/* css to elements */
+.title-two {
+  font-size: var(--title-sm);
+  font-family: var(--font-secondary);
+}
+
+/* utils classes */
+.upper {
+  text-transform: uppercase;
+}
