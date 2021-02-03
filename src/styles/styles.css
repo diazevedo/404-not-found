@@ -21,9 +21,7 @@
   --space-sm: 2.4rem;
   --space-md: 4rem;
   --space-lg: 7.7rem;
-  --space-lgx: 11.9rem;
 
-  --min-width: 37.5rem;
   --max-width: 144rem;
 }
 
@@ -42,12 +40,15 @@ html {
 body {
   font-family: var(--font-primary);
   padding: var(--space-xs) var(--space-xs) var(--space-md);
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 body,
 main {
   width: 100%;
 }
+
 /* css to elements */
 .title-two {
   font-size: var(--title-sm);
@@ -58,18 +59,21 @@ main {
 .container {
   display: flex;
   flex-direction: column;
-
+  margin: 6rem 0;
   width: 100%;
 }
 
 .image-container {
-  margin: 6rem 0;
   flex: 1;
   width: 100%;
+  margin-bottom: 6rem;
+  display: flex;
+  justify-content: center;
 }
 
 .image {
   width: 100%;
+  height: 100%;
 }
 
 .text-container {
@@ -128,26 +132,57 @@ main {
 
 .contact-links:hover {
   transform: scale(1.1);
-  /* box-shadow: 0px 4px 11px rgba(51, 51, 51, 0.3); */
-  /* font-size: var(--text-sm); */
-}
-
-/* util classes */
-.upper {
-  text-transform: uppercase;
 }
 
 @media screen and (min-width: 768px) {
   body {
-    padding: var(--space-md) var(--space-xs) var(--space-md);
+    padding: var(--space-md) var(--space-lg);
   }
 
   .title-one {
     font-size: var(--title-lg);
   }
 
+  .image {
+    max-width: 54rem;
+    height: 41.5rem;
+  }
+
   .text-regular {
     font-size: var(--text-md);
     line-height: 3.6rem;
   }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    flex-direction: row;
+    margin-top: 20rem;
+    max-width: 130rem;
+  }
+
+  .image-container {
+    margin-right: 2.5rem;
+    justify-content: flex-start;
+  }
+
+  .title-one {
+    line-height: 9.5rem;
+  }
+
+  .text-container .text-regular {
+    max-width: 40rem;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* util classes */
+.upper {
+  text-transform: uppercase;
 }
